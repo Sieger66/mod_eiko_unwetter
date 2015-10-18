@@ -58,7 +58,7 @@ $letzte_akt = strip_tags($letzte_akt);
 		<th class="eiko_unwetter_th"><?php echo $warn_anzahl;?> Wetterwarnung(en) f&uuml;r:</th>
 	</tr>
 	<tr>
-		<td class="eiko_unwetter_td"><?php echo 'Kreis: '.$warn_kreis;?></td>
+		<td class="eiko_unwetter_td"><?php echo ''.$warn_kreis;?></td>
 	</tr>
 <?php									
 									
@@ -92,7 +92,11 @@ endif;
 <?php
 									
 								else:
-									echo '<table class="eiko_unwetter_table"><tr><td class="eiko_unwetter_td">Es sind keine Wetterwarnungen im Kreis '.$kreis.' aktiv.</td></tr><tr><td class="eiko_unwetter_td">('.$letzte_akt.')</td></tr></table>';	 							
+									echo '<table class="eiko_unwetter_table"><tr><td class="eiko_unwetter_td">Es sind keine Wetterwarnungen f&uuml;r '.$kreis.' aktiv.</td></tr><tr><td class="eiko_unwetter_td">('.$letzte_akt.')</td></tr>';	 
+									if ($warnkarte) :
+									echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width.'" border="0"></a></td></tr>';
+									endif;			
+									echo '</table>';
                                 endif;
 
 

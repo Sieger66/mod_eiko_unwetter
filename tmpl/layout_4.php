@@ -33,17 +33,17 @@ echo '</tr>';
 }
 }
 
-echo '<tr class="eiko_karte_tr">';
-echo '<td class="eiko_karte_td">';
 
 
 if($unwetterkarte == "1")
 {
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
 echo '<a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" title="Unwetterwarnkarte" width="'.$width_karte.'" border="0"></a>';
-}
-
 echo '</td>';
 echo '</tr>';
+}
+
 
 if($titel_karte == "1")
 {
@@ -57,16 +57,16 @@ echo '</tr>';
 }
 }
 
-echo '<tr class="eiko_karte_tr">';
-echo '<td class="eiko_karte_td">';
 
 if($waldbrandkarte == "1")
 {
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
 echo '<a href="http://www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="http://www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
-}
-
 echo '</td>';
 echo '</tr>';
+}
+
 
 if($titel_karte == "1")
 {
@@ -80,16 +80,15 @@ echo '</tr>';
 }
 }
 
-echo '<tr class="eiko_karte_tr">';
-echo '<td class="eiko_karte_td">';
-
 if($graslandkarte == "1")
 {
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
 echo '<a href="http://www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="http://www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
-}
-
 echo '</td>';
 echo '</tr>';
+}
+
 echo '<tr class="eiko_karte_tr">';
 
 echo '<td class="eiko_karte_td">';

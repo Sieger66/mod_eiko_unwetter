@@ -56,7 +56,7 @@ $letzte_akt = strip_tags($letzte_akt);
 									$lines = str_replace('<td>', '<td class="eiko_unwetter_td">', $lines); 
 									echo $lines;
 								else:
-									echo '<table class="eiko_unwetter_table"><tr><td class="eiko_unwetter_td"><span class ="eiko_unwetter_span"><small>Es sind keine Wetterwarnungen im '.$kreis.' aktiv.</small> <small>('.$letzte_akt.')</small></span></td></tr></table>';	 							
+									echo '<table class="eiko_unwetter_table"><tr><td class="eiko_unwetter_td"><span class ="eiko_unwetter_span"><small>Es sind keine Wetterwarnungen f&uuml; '.$kreis.' aktiv.</small> <small>('.$letzte_akt.')</small></span></td></tr></table>';	 							
                                 endif;
 
 
