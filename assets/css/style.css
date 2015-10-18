@@ -1,0 +1,15 @@
+/**
+ * @version     1.00
+ * @package     mod_eiko_unwetter
+ * @copyright   Copyright (C) 2015 by Ralf Meyer. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - http://einsatzkomponente.de
+ */
+
+.eiko_unwetter_h2 { color:#ffffff; }
+.eiko_unwetter_th { background-color:#324A92; color:#E2E9FD; height: 23px; border: solid 1px #808080;  }
+.eiko_unwetter_td { text-align: left; font-weight: normal; padding: 5px; background-color: #E2E9FD; border: solid 1px #808080; }
+.eiko_unwetter_table { border-collapse: collapse; }
+.eiko_unwetter_span { color:#ffffff; }
+
+

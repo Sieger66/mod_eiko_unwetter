@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @version     1.00
+ * @package     mod_eiko_unwetter
+ * @copyright   Copyright (C) 2015 by Ralf Meyer. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - http://einsatzkomponente.de
+ */
+-->
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>mod_eiko_unwetter</name>
+	<author>Ralf Meyer</author>
+	<creationDate>2015-10-18</creationDate>
+	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
+	<authorUrl>http://einsatzkomponente.de</authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+	<p>Das Modul zur Anzeige von Wetterwarnungen auf einer Modulposition</p>
+	]]>
+	</description>
+
+	<files>
+		<filename module="mod_eiko_unwetter">mod_eiko_unwetter.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+
+
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+                <field
+					name="curl"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="Abfragemethode der Daten?"
+					description="">
+					<option
+						value="1">curl</option>
+					<option
+						value="2">url_fopen</option>
+				</field>	
+				
+				<field
+					name="eiko_unwetter_css"
+					type="textarea" rows="10" 
+					label="CSS-Style"
+					default=".eiko_unwetter_h2 {  } .eiko_unwetter_th {  border: solid 1px #808080; padding: 5px;  } .eiko_unwetter_td { text-align: left; font-weight: normal; padding: 5px; border: solid 1px #808080; } .eiko_unwetter_table { border-collapse: collapse;line-height:1; } .eiko_unwetter_span {color:#000000;} 
+
+.eiko_karte_th { background-color:#cccccc;border: solid 1px #808080; padding: 5px; text-align: center; } .eiko_karte_td {  padding: 5px; border: solid 1px #808080; text-align: center;} .eiko_karte_table { border-collapse: collapse;line-height:1; } "
+					description="Anpassen des CSS-Style" />
+					
+	<field name="layout" type="list" default="layout_1" label="Layout :" description="Wählen Sie hier bitte das Layout aus.">
+			<option value="layout_1">Wetterwarnung (Horizontal)</option>
+			<option value="layout_2">Wetterwarnung (Vertikal)</option>
+			<option value="layout_3">Wetterkarten (Horizontal)</option>
+			<option value="layout_4">Wetterkarten (Vertikal)</option>
+	</field>
+					
+
+		</fieldset>
+
+			<fieldset name="wetterwarnungen" label="Wetterwarnungen">
+
+				
+	<field name="kreis" type="list" default="Kreis Leer" label="Kreis" description="Aus welchem Kreis sollen die Wetterwarnungen angezeigt werden ?">
+			<option value="Kreis Leer">Kreis Leer</option>
+			<option value="Stadt Suhl">Stadt Suhl</option>
+			<option value="Kreis Mittelsachsen - Bergland">Kreis Mittelsachsen - Bergland</option>
+			<option value="Kreis Sächsische Schweiz-Osterzgebirge - westelbisches Bergland">Kreis Sächsische Schweiz-Osterzgebirge - westelbisches Bergland</option>
+			<option value="Vogtlandkreis - Bergland">Vogtlandkreis - Bergland</option>
+	</field>
+	
+				<field
+					name="kreis_first"
+					type="text"  
+					label="Kreis (nur wenn notwendig): "
+					default=""
+					filter="raw"
+					description="Falls Ihr Kreis oben nicht aufgeführt ist, kann dieser hier eingetragen werden. Es ist zwingend die genaue Bezeichung , wie Sie auf der DWD-Seite verwendet wird notwendig !! z.b. Kreis Leer" />
+
+		
+                <field
+					name="unwetter"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Nur Unwetterwarnungen ?"
+					description="">
+					<option
+						value="0">Nein</option>
+					<option
+						value="1">Ja</option>
+				</field>	
+
+                <field
+					name="warnkarte"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="Warnkarte anzeigen"
+					description="">
+					<option
+						value="0">Nein</option>
+					<option
+						value="1">Ja</option>
+				</field>	
+		<field name="width" type="text" default="100%" label="Kartenbreite:" description="In welcher Breite soll die Wetterwarnkarte dargestellt werden. z.b. 100% oder 150px">
+		</field>
+					
+					
+					
+
+		</fieldset>
+		
+			<fieldset name="warnkarten" label="Warnkarten">
+
+				
+
+		<field name="bl" type="list" default="bl09" label="Bundesland:" description="Waehlen Sie die anzuzeigende Region">
+			<option value="bl01">Baden-Württemberg</option>
+			<option value="bl02">Bayern</option>
+			<option value="bl03">Berlin</option>
+			<option value="bl04">Brandenburg</option>
+			<option value="bl05">Bremen</option>
+			<option value="bl06">Hamburg</option>
+			<option value="bl07">Hessen</option>
+			<option value="bl08">Mecklenburg-Vorpommern</option>
+			<option value="bl09">Niedersachsen</option>
+			<option value="bl10">Nordrhein-Westfalen</option>
+			<option value="bl11">Rheinland-Pfalz</option>
+			<option value="bl12">Saarland</option>
+			<option value="bl13">Sachsen</option>
+			<option value="bl14">Sachsen-Anhalt</option>
+			<option value="bl15">Schleswig-Holstein</option>
+			<option value="bl16">Thüringen</option>
+		</field>
+	
+		<field name="titel_karte" type="radio" class="btn-group" default="1" label="Titelleiste anzeigen:" description="Soll die Titelleiste eingeblendet werden?">
+			<option value="0">Nein</option>
+			<option value="1">Ja</option>
+		</field>
+
+		<field name="unwetterkarte" type="radio" class="btn-group" default="1" label="Unwetteranzeige:" description="Soll die Unwetterkarte eingeblendet werden?">
+			<option value="0">Nein</option>
+			<option value="1">Ja</option>
+		</field>
+		
+
+			<field name="waldbrandkarte" type="radio" class="btn-group" default="1" label="Waldbrandanzeige:" description="Soll die Waldbrandkarte eingeblendet werden?">
+			<option value="0">Nein</option>
+			<option value="1">Ja</option>
+		</field>
+		<field name="graslandkarte" type="radio" class="btn-group" default="1" label="Graslandanzeige:" description="Soll die Graslandkarte eingeblendet werden?">
+			<option value="0">Nein</option>
+			<option value="1">Ja</option>
+		</field>
+					
+		<field name="width_karte" type="text" default="150px" label="Bildbreite:" description="In welcher Breite sollen die Wetterwarnbilder dargestellt werden. z.b. 100% oder 150px">
+		</field>
+
+		</fieldset>
+		
+		
+			<fieldset name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+				>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
