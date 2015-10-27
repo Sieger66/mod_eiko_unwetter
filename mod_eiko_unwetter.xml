@@ -11,7 +11,7 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2015-10-18</creationDate>
+	<creationDate>2015-10-27</creationDate>
 	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
@@ -50,11 +50,54 @@
 						value="2">url_fopen</option>
 				</field>	
 				
+		<field name="bl" type="list" default="bl09" label="Bundesland:" description="Waehlen Sie die anzuzeigende Region">
+			<option value="gesamt">alle (Deutschlandkarte)</option>
+			<option value="bl01">Baden-Württemberg</option>
+			<option value="bl02">Bayern</option>
+			<option value="bl03">Berlin</option>
+			<option value="bl04">Brandenburg</option>
+			<option value="bl05">Bremen</option>
+			<option value="bl06">Hamburg</option>
+			<option value="bl07">Hessen</option>
+			<option value="bl08">Mecklenburg-Vorpommern</option>
+			<option value="bl09">Niedersachsen</option>
+			<option value="bl10">Nordrhein-Westfalen</option>
+			<option value="bl11">Rheinland-Pfalz</option>
+			<option value="bl12">Saarland</option>
+			<option value="bl13">Sachsen</option>
+			<option value="bl14">Sachsen-Anhalt</option>
+			<option value="bl15">Schleswig-Holstein</option>
+			<option value="bl16">Thüringen</option>
+		</field>
+				
+	<field name="kreis" type="list" default="Kreis Leer" label="Kreis" description="Aus welchem Kreis sollen die Wetterwarnungen angezeigt werden ?">
+			<option value="Insel Borkum">Borkum</option>
+			<option value="Stadt Emden">Emden</option>
+			<option value="Kreis Celle">Celle</option> 
+			<option value="Stadt Emden">Emden</option>
+			<option value="Kreis Emsland">Emsland</option>
+			<option value="Kreis Grafschaft Bentheim">Grafschaft Bentheim</option>
+			<option value="Kreis Mittelsachsen - Bergland">Mittelsachsen - Bergland</option>
+			<option value="Kreis Osterode am Harz">Osterode am Harz</option>
+			<option value="Kreis Sächsische Schweiz-Osterzgebirge - westelbisches Bergland">Sächsische Schweiz-Osterzgebirge - westelbisches Bergland</option>
+			<option value="Kreis Schleswig-Flensburg - Binnenland">Schleswig-Flensburg - Binnenland</option>
+			<option value="Stadt Suhl">Suhl</option>
+			<option value="Vogtlandkreis - Bergland">Vogtlandkreis - Bergland</option>
+	</field>
+	
 				<field
+					name="kreis_first"
+					type="text"  
+					label="Kreis (nur wenn notwendig): "
+					default=""
+					filter="raw"
+					description="Falls Ihr Kreis oben nicht aufgeführt ist, kann dieser hier eingetragen werden. Es ist zwingend die genaue Bezeichung , wie Sie auf der DWD-Seite verwendet wird notwendig !! z.b. Kreis Leer" />
+
+			<field
 					name="eiko_unwetter_css"
 					type="textarea" rows="10" 
 					label="CSS-Style"
-					default=".eiko_unwetter_h2 {  } .eiko_unwetter_th {  border: solid 1px #808080; padding: 5px;  } .eiko_unwetter_td { text-align: left; font-weight: normal; padding: 5px; border: solid 1px #808080; } .eiko_unwetter_table { border-collapse: collapse;line-height:1; } .eiko_unwetter_span {color:#000000;} 
+					default=".eiko_unwetter_h2 {  } .eiko_unwetter_th {  border: solid 1px #808080; padding: 5px;  } .eiko_unwetter_td { text-align: left; font-weight: normal; padding: 5px; border: solid 1px #808080; } .eiko_unwetter_table { border-collapse: collapse;line-height:1.1; } .eiko_unwetter_span {color:#000000;} 
 
 .eiko_karte_th { background-color:#cccccc;border: solid 1px #808080; padding: 5px; text-align: center; } .eiko_karte_td {  padding: 5px; border: solid 1px #808080; text-align: center;} .eiko_karte_table { border-collapse: collapse;line-height:1; } "
 					description="Anpassen des CSS-Style" />
@@ -71,24 +114,7 @@
 
 			<fieldset name="wetterwarnungen" label="Wetterwarnungen">
 
-				
-	<field name="kreis" type="list" default="Kreis Leer" label="Kreis" description="Aus welchem Kreis sollen die Wetterwarnungen angezeigt werden ?">
-			<option value="Kreis Leer">Kreis Leer</option>
-			<option value="Stadt Suhl">Stadt Suhl</option>
-			<option value="Kreis Mittelsachsen - Bergland">Kreis Mittelsachsen - Bergland</option>
-			<option value="Kreis Sächsische Schweiz-Osterzgebirge - westelbisches Bergland">Kreis Sächsische Schweiz-Osterzgebirge - westelbisches Bergland</option>
-			<option value="Vogtlandkreis - Bergland">Vogtlandkreis - Bergland</option>
-	</field>
-	
-				<field
-					name="kreis_first"
-					type="text"  
-					label="Kreis (nur wenn notwendig): "
-					default=""
-					filter="raw"
-					description="Falls Ihr Kreis oben nicht aufgeführt ist, kann dieser hier eingetragen werden. Es ist zwingend die genaue Bezeichung , wie Sie auf der DWD-Seite verwendet wird notwendig !! z.b. Kreis Leer" />
-
-		
+							
                 <field
 					name="unwetter"
 					type="radio"
@@ -124,27 +150,7 @@
 		
 			<fieldset name="warnkarten" label="Warnkarten">
 
-				
-
-		<field name="bl" type="list" default="bl09" label="Bundesland:" description="Waehlen Sie die anzuzeigende Region">
-			<option value="bl01">Baden-Württemberg</option>
-			<option value="bl02">Bayern</option>
-			<option value="bl03">Berlin</option>
-			<option value="bl04">Brandenburg</option>
-			<option value="bl05">Bremen</option>
-			<option value="bl06">Hamburg</option>
-			<option value="bl07">Hessen</option>
-			<option value="bl08">Mecklenburg-Vorpommern</option>
-			<option value="bl09">Niedersachsen</option>
-			<option value="bl10">Nordrhein-Westfalen</option>
-			<option value="bl11">Rheinland-Pfalz</option>
-			<option value="bl12">Saarland</option>
-			<option value="bl13">Sachsen</option>
-			<option value="bl14">Sachsen-Anhalt</option>
-			<option value="bl15">Schleswig-Holstein</option>
-			<option value="bl16">Thüringen</option>
-		</field>
-	
+					
 		<field name="titel_karte" type="radio" class="btn-group" default="1" label="Titelleiste anzeigen:" description="Soll die Titelleiste eingeblendet werden?">
 			<option value="0">Nein</option>
 			<option value="1">Ja</option>

@@ -39,7 +39,16 @@ if($unwetterkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-echo '<a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" title="Unwetterwarnkarte" width="'.$width_karte.'" border="0"></a>';
+			if ($show_germany) :
+			echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width_karte.'" border="0"></a></td></tr>';
+			else:
+			echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" width="'.$width_karte.'" border="0"></a></td></tr>';
+		endif;
+echo '</td>';
+echo '</tr>';
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="http://www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
 echo '</td>';
 echo '</tr>';
 }
@@ -65,6 +74,11 @@ echo '<td class="eiko_karte_td">';
 echo '<a href="http://www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="http://www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
 echo '</td>';
 echo '</tr>';
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="http://www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
+echo '</td>';
+echo '</tr>';
 }
 
 
@@ -87,15 +101,13 @@ echo '<td class="eiko_karte_td">';
 echo '<a href="http://www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="http://www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
 echo '</td>';
 echo '</tr>';
-}
-
 echo '<tr class="eiko_karte_tr">';
-
 echo '<td class="eiko_karte_td">';
-
-echo '<span style="font-size:9px; color:#969696;">&nbsp;&nbsp;&nbsp;&copy; Deutscher Wetterdienst, (DWD) </a></span>';
+echo '<a href="http://www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
 echo '</td>';
 echo '</tr>';
+}
+
 
 
 echo '</table>';
