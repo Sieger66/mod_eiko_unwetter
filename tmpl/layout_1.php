@@ -9,7 +9,6 @@
 
 // no direct access
 defined('_JEXEC') or die;
-
 ?>
 <style>
 <?php echo $css; ?>
@@ -45,21 +44,28 @@ foreach ($arr as $k=>$v){
 				$regionName = htmlentities($v[$h]['regionName'], ENT_QUOTES, 'UTF-8');
 				$altitudeStart = $v[$h]['altitudeStart'];  
 				$altitudeEnd = $v[$h]['altitudeEnd']; 
-				$start = date('d.m.Y', substr($v[$h]['start'], 0, -3)).' ('.date('H:i', substr($v[$h]['start'], 0, -3)).' Uhr)';  
 				$headline = htmlentities($v[$h]['headline'], ENT_QUOTES, 'UTF-8'); 
 				$event = htmlentities($v[$h]['event'], ENT_QUOTES, 'UTF-8');
 				$instruction = htmlentities($v[$h]['instruction'], ENT_QUOTES, 'UTF-8'); 
 				$description = htmlentities($v[$h]['description'], ENT_QUOTES, 'UTF-8'); 
-				$end = date('d.m.Y', substr($v[$h]['end'], 0, -3)).' ('.date('H:i', substr($v[$h]['end'], 0, -3)).' Uhr)';
 				$type = $v[$h]['type']; 
 				$level = $v[$h]['level']; 
 				$state = htmlentities($v[$h]['state'], ENT_QUOTES, 'UTF-8'); 
+
+				$tag 	= strtr(date('D', substr($v[$h]['start'], 0, -3)), $trans); 
+				$monat 	= strtr(date('M', substr($v[$h]['start'], 0, -3)), $trans); 
+				$start 	= $tag.', '.date('d.', substr($v[$h]['start'], 0, -3)).$monat.'. '.date('H:i', substr($v[$h]['start'], 0, -3)).'';  
+				$tag 	= strtr(date('D', substr($v[$h]['end'], 0, -3)), $trans); 
+				$monat 	= strtr(date('M', substr($v[$h]['end'], 0, -3)), $trans); 
+				$end = $tag.', '.date('d.', substr($v[$h]['end'], 0, -3)).$monat.'. '.date('H:i', substr($v[$h]['end'], 0, -3)).''; 
+
 				
 				
 					$report .= '</tr>';
 					$report .= '<tr>';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= '<b>'.$headline.'</b>';  
+					$report .= '<br/>'.$start.' bis '.$end.'';
 					$report .= '</td>';
 					$report .= '</tr>';
 					
@@ -93,7 +99,6 @@ foreach ($arr as $k=>$v){
 					$report .= $description;
 					$report .= '</td>';
 					$report .= '</tr>';
-					$report .= '<tr>';
 					endif;
 					
 					if ($show_instruction && $instruction) :
@@ -103,11 +108,7 @@ foreach ($arr as $k=>$v){
 					$report .= '</td>';
 					$report .= '</tr>';
 					endif;
-
-					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
-					$report .= 'Gültig von '.$start.' bis '.$end.'';
-					$report .= '</td>';
-					$report .= '</tr>';
+					
 					$report .= '<tr>';
 					$report .= '<td class="eiko_space"></td>';
 					$report .= '</tr>';

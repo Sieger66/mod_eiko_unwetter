@@ -8,15 +8,15 @@
  * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - http://einsatzkomponente.de
  */
 -->
-<extension type="module" version="3.0" client="site" method="upgrade">
+<extension type="module" version="3.1" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2015-11-08</creationDate>
+	<creationDate>2015-11-09</creationDate>
 	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>http://einsatzkomponente.de</authorUrl>
-	<version>1.0.0</version>
+	<version>1.01</version>
 	<description>
 	<![CDATA[
 	<p>Das Modul zur Anzeige von Wetterwarnungen auf einer Modulposition</p>

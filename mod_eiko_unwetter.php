@@ -555,12 +555,37 @@ default: $kreis_name='Kreis Leer';$kennung='LER';break;
 	$DEFCON[3]['color']     				= 'background-color: #fb8c00 !important;color:#000000 !important;';    
 	$DEFCON[3]['status']    				= 'Warnungen vor markantem Wetter';
 	// rot:     Unwetterwarnungen
-	$DEFCON[4]['color']     				= 'background-color: #e53935 !important;color:#ffffff !important;';    
+	$DEFCON[4]['color']     				= 'background-color: #e53935 !important;color:#ffffff !important;border-color:#ffffff !important;';    
 	$DEFCON[4]['status']    				= 'Unwetterwarnungen';
 	//violett: Warnungen vor extremen Unwetter
-	$DEFCON[5]['color']     				= 'background-color: #880e4f  !important;color:#ffffff !important;'; 
+	$DEFCON[5]['color']     				= 'background-color: #880e4f  !important;color:#ffffff !important;border-color:#ffffff !important;'; 
 	$DEFCON[5]['status']    				= 'Warnungen vor extremen Unwetter';
 
+	
+	$trans = array(
+    'Monday'    => 'Montag',
+    'Tuesday'   => 'Dienstag',
+    'Wednesday' => 'Mittwoch',
+    'Thursday'  => 'Donnerstag',
+    'Friday'    => 'Freitag',
+    'Saturday'  => 'Samstag',
+    'Sunday'    => 'Sonntag',
+    'Mon'       => 'Mo',
+    'Tue'       => 'Di',
+    'Wed'       => 'Mi',
+    'Thu'       => 'Do',
+    'Fri'       => 'Fr',
+    'Sat'       => 'Sa',
+    'Sun'       => 'So',
+    'January'   => 'Januar',
+    'February'  => 'Februar',
+    'March'     => 'März',
+    'May'       => 'Mai',
+    'June'      => 'Juni',
+    'July'      => 'Juli',
+    'October'   => 'Oktober',
+    'December'  => 'Dezember'
+);
 
 
 if ($letzte_akt) :
