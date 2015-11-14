@@ -31,6 +31,7 @@ $show_description = $params->get('show_description','1');
 $show_event = $params->get('show_event','0');
 $show_state = $params->get('show_state','0');
 $hide_on_action = $params->get('hide_on_action','0');
+$show_warn_image = $params->get('show_warn_image','1');
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $class_sfx = htmlspecialchars($params->get('class_sfx'));

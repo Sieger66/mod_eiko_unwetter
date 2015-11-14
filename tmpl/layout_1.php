@@ -31,12 +31,6 @@ $report= '<table class="eiko_unwetter_table '.$moduleclass_sfx.'">';
 foreach ($arr as $k=>$v){
 				$array[$k] = '"'.htmlentities($v[0]['regionName'], ENT_QUOTES, 'UTF-8').'"';
 				if ($k==$kreis) : 
-?>
-<style>
-.show_on_action {display:inline !important;}
-.hide_on_action {display:none !important;}
-</style>
-<?php
 
 				//if ($regionName==$kreis) : $warn_state++; 
 				foreach ($v as $h=>$j){ //print_r ($j);
@@ -64,6 +58,14 @@ foreach ($arr as $k=>$v){
 					$report .= '</tr>';
 					$report .= '<tr>';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
+					//$report .= '<img class ="eiko_unwetter_icon" src="'.JURI::base().'modules/mod_eiko_unwetter/assets/icons/'.$type.$level.'.png"  />';
+					
+					if ($show_warn_image) :
+					if ($level == '4' or $level == '5') :	
+					$report .= '<img class ="eiko_warn_image" src="'.JURI::base().'modules/mod_eiko_unwetter/assets/icons/achtung.gif" />';
+					endif;
+					endif;
+					
 					$report .= '<b>'.$headline.'</b>';  
 					$report .= '<br/>'.$start.' bis '.$end.'';
 					$report .= '</td>';
@@ -113,6 +115,11 @@ foreach ($arr as $k=>$v){
 					$report .= '<td class="eiko_space"></td>';
 					$report .= '</tr>';
 				 //echo $regionName.' = '.$headline.'<br/>';
+				 
+					if ($level == '4' or $level == '5') :	
+					echo '<style>.show_on_action {display:inline !important;}.hide_on_action {display:none !important;}</style>';			 
+					endif;
+				 
 }	
 endif;
 }

@@ -8,18 +8,18 @@
  * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - http://einsatzkomponente.de
  */
 -->
-<extension type="module" version="3.1" client="site" method="upgrade">
+<extension type="module" version="2.5" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2015-11-11</creationDate>
+	<creationDate>2015-11-14</creationDate>
 	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>http://einsatzkomponente.de</authorUrl>
-	<version>1.01</version>
+	<version>1.02</version>
 	<description>
 	<![CDATA[
-	<p>Das Modul zur Anzeige von Wetterwarnungen auf einer Modulposition</p>
+	<p><h1>mod_eiko_unwetter (DWD-Wetterwarnungen/Waldbrandgefahr/Graslandfeuerindex)</h1>Das Modul dient der Anzeige von Wetterwarnungen des DWD auf einer Modulposition, und wurde vorrangig für den Einsatz auf Webseiten von Feuerwehren und anderen Hilfsorganisationen erstellt.<div class="alert alert-warning" role="alert">Das Copyright des DWD darf auf keinen Fall entfernt werden.<br/>Quelle der Warnungen: http://www.dwd.de</div><div class="alert alert-info" role="alert">Weitere Informationen zu diesem Modul gibt es auf <a href ="http://www.einsatzkomponente.de" target="_blank"> http://www.einsatzkomponente.de</a></div>
 	]]>
 	</description>
 
@@ -89,7 +89,7 @@
 .eiko_karte_th { background-color:#cccccc;border: solid 1px #808080; padding: 5px; text-align: center; } .eiko_karte_td {  padding: 5px; border: solid 1px #808080; text-align: center;} .eiko_karte_table { border-collapse: collapse;line-height:1; } 
 .eiko_space { border:0px !important;padding-bottom:5px;} 
 .dwd_copyright {color:#000000 !important;text-decoration:none !important;font-size:8px;}
-.dwd_count {color:#ff0000 !important;text-decoration:none !important;font-size:8px;}
+.dwd_count {color:#ff0000 !important;text-decoration:none !important;font-size:8px;}.eiko_warn_image{float:right;width:100px;}
  "
 					description="Anpassen des CSS-Style" />
 					
@@ -119,6 +119,20 @@
 					<option
 						value="1">Ja</option>
 				</field>	
+				
+                <field
+					name="show_warn_image"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="Warn-GIF bei ROT u. VIOLETT :"
+					description="Bei Warnstufen ROT und VIOLETT ein Warn-Gif anzeigen ?">
+					<option
+						value="0">Nein</option>
+					<option
+						value="1">Ja</option>
+				</field>	
+				
 		<field name="width" type="text" default="100%" label="Kartenbreite:" description="In welcher Breite soll die Wetterwarnkarte dargestellt werden. z.b. 100% oder 150px">
 		</field>
 			
