@@ -15,7 +15,8 @@ defined('_JEXEC') or die;
 .show_on_action {display:none !important;}
 .hide_on_action {display:inline !important;}
 </style>
-<?php
+<?php		
+
 
 
 $warn_state = 0;
@@ -55,8 +56,7 @@ foreach ($arr as $k=>$v){
 
 				
 				
-					$report .= '</tr>';
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					//$report .= '<img class ="eiko_unwetter_icon" src="'.JURI::base().'modules/mod_eiko_unwetter/assets/icons/'.$type.$level.'.png"  />';
 					
@@ -72,7 +72,7 @@ foreach ($arr as $k=>$v){
 					$report .= '</tr>';
 					
 					if ($show_level_type) :
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= 'Level: '.$level.' Type: '.$type;  
 					$report .= '</td>';
@@ -80,7 +80,7 @@ foreach ($arr as $k=>$v){
 					endif;
 					
 					if ($show_event) :
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= 'Event: '.$event;  
 					$report .= '</td>';
@@ -88,7 +88,7 @@ foreach ($arr as $k=>$v){
 					endif;
 					
 					if ($show_state) :
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= 'Bundesland: '.$state;  
 					$report .= '</td>';
@@ -96,7 +96,7 @@ foreach ($arr as $k=>$v){
 					endif;
 
 					if ($show_description && $description) :
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= $description;
 					$report .= '</td>';
@@ -104,14 +104,14 @@ foreach ($arr as $k=>$v){
 					endif;
 					
 					if ($show_instruction && $instruction) :
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_unwetter_td" style="'.$DEFCON[$level]['color'].'">';
 					$report .= $instruction;  
 					$report .= '</td>';
 					$report .= '</tr>';
 					endif;
 					
-					$report .= '<tr>';
+					$report .= '<tr class ="eiko_level_'.$level.'">';
 					$report .= '<td class="eiko_space"></td>';
 					$report .= '</tr>';
 				 //echo $regionName.' = '.$headline.'<br/>';
@@ -119,12 +119,12 @@ foreach ($arr as $k=>$v){
 					if ($level == '4' or $level == '5') :	
 					echo '<style>.show_on_action {display:inline !important;}.hide_on_action {display:none !important;}</style>';			 
 					endif;
-				 
+
 }	
 endif;
 }
 if (!$warn_state) :
-					$report .= '<tr>';
+					$report .= '<tr >';
 					$report .= '<td class="eiko_unwetter_td" style="background-color: #c5e566  !important;color:#000000 !important;">';
 					$report .= 'Es ist zur Zeit keine Warnung aktiv.';
 					$report .= '</td>';
@@ -133,13 +133,13 @@ endif;
 
 	if ($warnkarte) :
 			if ($show_germany) :
-				$report .= '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
 			else:
-				$report .= '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
 		endif;
 	endif;	
 					$report .= '<td class="eiko_unwetter_td">'; 
-					$report .= '<span class="dwd_count">'.$warn_state.' Warnung(en) aktiv</span>  <a class="dwd_copyright" href="http://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a> <span class="dwd_copyright">( Letzte Aktualisierung '.$time.')</span>';
+					$report .= '<span class="dwd_count">'.$warn_state.' Warnung(en) aktiv</span><br/>  <a class="dwd_copyright" href="http://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a><br/> <span class="dwd_copyright">Letzte Aktualisierung '.$time.'</span>';
 					$report .= '</td>';
 					$report .= '</tr>';
 $report .= '</table>';

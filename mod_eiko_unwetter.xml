@@ -11,12 +11,12 @@
 <extension type="module" version="2.5" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2015-11-14</creationDate>
+	<creationDate>2015-11-15</creationDate>
 	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>http://einsatzkomponente.de</authorUrl>
-	<version>1.02</version>
+	<version>1.03</version>
 	<description>
 	<![CDATA[
 	<p><h1>mod_eiko_unwetter (DWD-Wetterwarnungen/Waldbrandgefahr/Graslandfeuerindex)</h1>Das Modul dient der Anzeige von Wetterwarnungen des DWD auf einer Modulposition, und wurde vorrangig für den Einsatz auf Webseiten von Feuerwehren und anderen Hilfsorganisationen erstellt.<div class="alert alert-warning" role="alert">Das Copyright des DWD darf auf keinen Fall entfernt werden.<br/>Quelle der Warnungen: http://www.dwd.de</div><div class="alert alert-info" role="alert">Weitere Informationen zu diesem Modul gibt es auf <a href ="http://www.einsatzkomponente.de" target="_blank"> http://www.einsatzkomponente.de</a></div>
@@ -94,10 +94,10 @@
 					description="Anpassen des CSS-Style" />
 					
 	<field name="layout" type="list" default="layout_1" label="Layout :" description="Wählen Sie hier bitte das Layout aus.">
-			<option value="layout_1">Wetterwarnung_1</option>
-			<option value="layout_2">Wetterwarnung_2</option>
-			<option value="layout_3">Wetterkarten_1</option>
-			<option value="layout_4">Wetterkarten_2</option>
+			<option value="layout_1">Wetterwarnung_1 (alle)</option>
+			<option value="layout_2">Wetterwarnung_2 (nur Unwetter)</option>
+			<option value="layout_3">Wetterkarten_1 (horizontal)</option>
+			<option value="layout_4">Wetterkarten_2 (vertikal)</option>
 	</field>
 					
 
