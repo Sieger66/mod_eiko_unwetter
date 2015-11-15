@@ -381,7 +381,7 @@ case '109762000' : $kreis_name='Stadt Kaufbeuren';$kennung='KFX';break;
 case '109763000' : $kreis_name='Stadt Kempten (Allgäu)';$kennung='KEX';break;
 case '109764000' : $kreis_name='Stadt Memmingen';$kennung='MMX';break;
 case '109771000' : $kreis_name='Kreis Aichach-Friedberg';$kennung='AIC';break;
-case '909772999' : $kreis_name='Kreis und Stadt Augsburg';$kennung='AXX';break;
+case '109772000' : $kreis_name='Kreis und Stadt Augsburg';$kennung='AXX';break;
 case '109773000' : $kreis_name='Kreis Dillingen a.d. Donau';$kennung='DLG';break;
 case '109774000' : $kreis_name='Kreis Günzburg';$kennung='GZX';break;
 case '109775000' : $kreis_name='Kreis Neu-Ulm';$kennung='NUX';break;
