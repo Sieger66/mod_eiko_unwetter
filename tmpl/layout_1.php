@@ -138,7 +138,7 @@ endif;
 				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="http://www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="http://www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
 		endif;
 	endif;	
-					$report .= '<td class="eiko_unwetter_td">'; 
+					$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td">'; 
 					$report .= '<span class="dwd_count">'.$warn_state.' Warnung(en) aktiv</span><br/>  <a class="dwd_copyright" href="http://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a><br/> <span class="dwd_copyright">Letzte Aktualisierung '.$time.'</span>';
 					$report .= '</td>';
 					$report .= '</tr>';
