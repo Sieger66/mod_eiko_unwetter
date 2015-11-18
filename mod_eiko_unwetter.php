@@ -21,6 +21,8 @@ $level = '';
 $state = '';
 $link = '';
 
+if(isset($_SERVER['HTTPS'])) : $ssl='https://'; else:	$ssl='http://'; endif;
+
 //$link = 'http://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.html';
 //$link = 'http://www.dwd.de/DWD/warnungen/warnapp/json/warnings.html';
 $link = 'http://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.json';
