@@ -88,9 +88,9 @@ $json = json_decode($jsondata, true);
 $time = date('d/m/Y', substr($json['time'], 0, -3)).' - '.date('H:i', substr($json['time'], 0, -3)).' Uhr'; 
 $copyright = $json['copyright'];
 $arr = $json['warnings'];
-
+$vorabinformation_arr = $json['vorabInformation'];
   
-  
+//print_r ($json);break;
   
   $show_germany = false;
   

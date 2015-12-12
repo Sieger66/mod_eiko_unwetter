@@ -67,7 +67,7 @@ echo '</tr>';
 }
 
 
-if($waldbrandkarte == "1")
+if($waldbrandkarte == "1" AND urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png'))
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
@@ -80,6 +80,19 @@ echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; co
 echo '</td>';
 echo '</tr>';
 }
+else {
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef/bild_leistungen_wbi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=5" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
+echo '</td>';
+echo '</tr>';
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
+echo '</td>';
+echo '</tr>';
+	}
+
 
 
 if($titel_karte == "1")
@@ -94,7 +107,7 @@ echo '</tr>';
 }
 }
 
-if($graslandkarte == "1")
+if($graslandkarte == "1" AND urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png'))
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
@@ -107,10 +120,42 @@ echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; co
 echo '</td>';
 echo '</tr>';
 }
+else {
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi/bild_leistungen_glfi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=4" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
+echo '</td>';
+echo '</tr>';
+echo '<tr class="eiko_karte_tr">';
+echo '<td class="eiko_karte_td">';
+echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
+echo '</td>';
+echo '</tr>';
+	}
 
 
 
 echo '</table>';
+
+?>
+<?php
+   function urlspy($adresse){
+      if($adresse) {
+        // Gesuchte Datei öffnen
+        $file = @fopen ($adresse, "r");
+      }
+      // Prüfen ob die gewünschte Datei existiert
+      if($file) {break;
+        return true;
+        fclose($file);
+      }
+
+      // Wenn Datei nicht vorhanden ist
+      else {
+        return false;
+      }
+   }
+
 
 ?>
 

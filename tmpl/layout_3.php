@@ -63,18 +63,26 @@ $col = $col+1;
 echo '</td>';
 echo '<td class="eiko_karte_td">';
 
-if($waldbrandkarte == "1")
+if($waldbrandkarte == "1" AND urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png'))
 {
 echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
+$col = $col+1;
+}
+else {
+echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef/bild_leistungen_wbi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=5" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
 $col = $col+1;
 }
 
 echo '</td>';
 echo '<td class="eiko_karte_td">';
 
-if($graslandkarte == "1")
+if($graslandkarte == "1" AND urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png'))
 {
 echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
+$col = $col+1;
+}
+else {
+echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi/bild_leistungen_glfi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=4" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
 $col = $col+1;
 }
 
@@ -92,4 +100,26 @@ echo '</tr>';
 echo '</table>';
 
 ?>
+
+<?php
+   function urlspy($adresse){
+      if($adresse) {
+        // Gesuchte Datei öffnen
+        $file = @fopen ($adresse, "r");
+      }
+      // Prüfen ob die gewünschte Datei existiert
+      if($file) {break;
+        return true;
+        fclose($file);
+      }
+
+      // Wenn Datei nicht vorhanden ist
+      else {
+        return false;
+      }
+   }
+
+
+?>
+
 
