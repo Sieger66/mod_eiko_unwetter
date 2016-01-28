@@ -62,11 +62,7 @@ $col = '';
 
 if($unwetterkarte == "1")
 {
-			if ($show_germany) :
-			echo '<a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" class="img_wetterkarte_1" width="'.$width_karte.'" border="0"></a>';
-			else:
-			echo '<a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg"  class="img_wetterkarte_2" width="'.$width_karte.'" border="0"></a>';
-		endif;
+				$report .= '<a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a>';
 $col = $col+1;
 }
 

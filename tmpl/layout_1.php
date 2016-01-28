@@ -229,10 +229,14 @@ if (!$warn_state) :
 endif;
 
 	if ($warnkarte) :
-			if ($show_germany) :
-				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
-			else:
+			if (!$show_karte_typ) :
+				if ($show_germany) :
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_de.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
+				else:
 				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
+				endif;
+			else:
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
 		endif;
 	endif;	
 					$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td">'; 

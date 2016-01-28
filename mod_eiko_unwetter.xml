@@ -11,12 +11,12 @@
 <extension type="module" version="2.5" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2016-01-06</creationDate>
+	<creationDate>2016-01-28</creationDate>
 	<copyright>Copyright (c) 2015 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>http://einsatzkomponente.de</authorUrl>
-	<version>1.12</version>
+	<version>1.13</version>
 	<description>
 	<![CDATA[
 	<p><h1>mod_eiko_unwetter (DWD-Wetterwarnungen/Waldbrandgefahr/Graslandfeuerindex)</h1>Das Modul dient der Anzeige von Wetterwarnungen des DWD auf einer Modulposition, und wurde vorrangig für den Einsatz auf Webseiten von Feuerwehren und anderen Hilfsorganisationen erstellt.<div class="alert alert-warning" role="alert">Das Copyright des DWD darf auf keinen Fall entfernt werden.<br/>Quelle der Warnungen: http://www.dwd.de</div><div class="alert alert-info" role="alert">Weitere Informationen zu diesem Modul gibt es auf <a href ="http://www.einsatzkomponente.de" target="_blank"> http://www.einsatzkomponente.de</a></div>
@@ -119,6 +119,11 @@
 						value="1">Ja</option>
 				</field>	
 				
+				<field name="show_karte_typ" type="list" default="0" label="Kartentyp :" description="Wählen Sie hier bitte das Layout der Karte aus.">
+					<option value="0">Schild</option>
+					<option value="1">Bundeslandkarte</option>
+				</field>
+				
                 <field
 					name="show_warn_image"
 					type="radio"
@@ -170,6 +175,19 @@
 			<option value="0">Nein</option>
 			<option value="1">Ja</option>
 		</field>
+				<field name="unwetterkarte_kriterium" type="list" default="" label="Unwetter-Kriterium :" description="Wählen Sie hier bitte das Kriterium der Karte aus.">
+					<option value="">alle</option>
+					<option value="_gewitter">Gewitter</option>
+					<option value="_schnee">Schneefall</option>
+					<option value="_nebel">Nebel</option>
+					<option value="_glatteis">Glätte, Glatteis</option>
+					<option value="_hitze">Hitze</option>
+					<option value="_regen">Stark- oder Dauerregen</option>
+					<option value="_sturm">Wind / Sturm / Orkan</option>
+					<option value="_Frost">Frost</option>
+					<option value="_tauwetter">Tauwetter</option>
+					<option value="_uv">UV-Strahlung</option>
+				</field>
 		
 			<field name="waldbrandkarte" type="radio" class="btn-group" default="1" label="Waldbrandanzeige:" description="Soll die Waldbrandkarte eingeblendet werden?">
 			<option value="0">Nein</option>

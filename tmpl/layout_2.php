@@ -134,12 +134,17 @@ if (!$warn_state) :
 endif;
 
 	if ($warnkarte) :
-			if ($show_germany) :
-				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
+			if (!$show_karte_typ) :
+				if ($show_germany) :
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_de.png" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
+				else:
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
+				endif;
 			else:
-				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><tr><td class="eiko_space"></td></tr>';
 		endif;
 	endif;	
+
 					$report .= '<td class="eiko_unwetter_td">'; 
 					$report .= '<span class="dwd_count">Insgesamt sind '.$warn_state.' Warnung(en) aktiv.</span><span class="dwd_copyright"> Weitere Informationen auf <a class="dwd_copyright" href="'.$ssl.'www.dwd.de" target="_blank">'.$ssl.'www.dwd.de</a></span><br/>  <a class="dwd_copyright" href="'.$ssl.'www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a><br/> <span class="dwd_copyright">Letzte Aktualisierung '.$time.'</span>';
 					$report .= '</td>';

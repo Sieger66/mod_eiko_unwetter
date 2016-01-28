@@ -49,11 +49,7 @@ if($unwetterkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-			if ($show_germany) :
-			echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map.png" width="'.$width_karte.'" border="0"></a></td></tr>';
-			else:
-			echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" width="'.$width_karte.'" border="0"></a></td></tr>';
-		endif;
+				echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a></td></tr>';
 echo '</td>';
 echo '</tr>';
 echo '<tr class="eiko_karte_tr">';
@@ -61,6 +57,7 @@ echo '<td class="eiko_karte_td">';
 echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
 echo '</td>';
 echo '</tr>';
+echo '<tr><td class="eiko_space"></td></tr>';
 }
 
 
@@ -89,6 +86,7 @@ echo '<td class="eiko_karte_td">';
 echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
 echo '</td>';
 echo '</tr>';
+echo '<tr><td class="eiko_space"></td></tr>';
 }
 
 
@@ -117,6 +115,7 @@ echo '<td class="eiko_karte_td">';
 echo '<a href="'.$ssl.'www.dwd.de" target=_blank"><span style="font-size:9px; color:#969696;">&copy; Deutscher Wetterdienst, (DWD) </a></span>';
 echo '</td>';
 echo '</tr>';
+echo '<tr><td class="eiko_space"></td></tr>';
 }
 
 

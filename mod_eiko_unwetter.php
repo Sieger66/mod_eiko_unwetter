@@ -20,6 +20,7 @@ $type = '';
 $level = '';
 $state = '';
 $link = '';
+$bdl = '';
 
 if(isset($_SERVER['HTTPS'])) : $ssl='https://'; else:	$ssl='http://'; endif;
 
@@ -34,7 +35,8 @@ $show_event = $params->get('show_event','0');
 $show_state = $params->get('show_state','0');
 $hide_on_action = $params->get('hide_on_action','0');
 $show_warn_image = $params->get('show_warn_image','1');
-
+$show_karte_typ = $params->get('show_karte_typ','0');
+$unwetterkarte_kriterium = $params->get('unwetterkarte_kriterium','');
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $class_sfx = htmlspecialchars($params->get('class_sfx'));
@@ -96,24 +98,24 @@ $vorabinformation_arr = $json['vorabInformation'];
   
 switch ($bundesland)
 {
-	case 'bl01': $bundesland_name = 'Baden-Württemberg'; $schild = 'SU';break;
-	case 'bl02': $bundesland_name = 'Bayern'; $schild = 'MS';break;
-	case 'bl03': $bundesland_name = 'Berlin'; $schild = 'PD';break;
-	case 'bl04': $bundesland_name = 'Brandenburg'; $schild = 'PD';break;
-	case 'bl05': $bundesland_name = 'Bremen'; $schild = 'HA';break;
-	case 'bl06': $bundesland_name = 'Hamburg'; $schild = 'HA';break;
-	case 'bl07': $bundesland_name = 'Hessen'; $schild = 'OF';break;
-	case 'bl08': $bundesland_name = 'Mecklenburg-Vorpommern'; $schild = 'PD';break;
-	case 'bl09': $bundesland_name = 'Niedersachsen'; $schild = 'HA';break;
-	case 'bl10': $bundesland_name = 'Nordrhein-Westfalen'; $schild = 'EM';break;
-	case 'bl11': $bundesland_name = 'Rheinland-Pfalz'; $schild = 'OF';break;
-	case 'bl12': $bundesland_name = 'Saarland'; $schild = 'OF';break;
-	case 'bl13': $bundesland_name = 'Sachsen'; $schild = 'LZ';break;
-	case 'bl14': $bundesland_name = 'Sachsen-Anhalt'; $schild = 'LZ';break;
-	case 'bl15': $bundesland_name = 'Schleswig-Holstein'; $schild = 'HA';break;
-	case 'bl16': $bundesland_name = 'Thüringen'; $schild = 'LZ';break;
-	case 'gesamt': $bundesland_name = 'Deutschland'; $show_germany=true;break;
-	default: $bundesland_name = 'Niedersachsen'; $schild = 'HA';break;
+	case 'bl01': $bundesland_name = 'Baden-Württemberg'; $schild = 'SU';$bdl ='baw';break;
+	case 'bl02': $bundesland_name = 'Bayern'; $schild = 'MS';$bdl ='bay';break;
+	case 'bl03': $bundesland_name = 'Berlin'; $schild = 'PD';$bdl ='bbb';break;
+	case 'bl04': $bundesland_name = 'Brandenburg'; $schild = 'PD';$bdl ='bbb';break;
+	case 'bl05': $bundesland_name = 'Bremen'; $schild = 'HA';$bdl ='nib';break;
+	case 'bl06': $bundesland_name = 'Hamburg'; $schild = 'HA';$bdl ='shh';break;
+	case 'bl07': $bundesland_name = 'Hessen'; $schild = 'OF';$bdl ='hes';break;
+	case 'bl08': $bundesland_name = 'Mecklenburg-Vorpommern'; $schild = 'PD';$bdl ='mvp';break;
+	case 'bl09': $bundesland_name = 'Niedersachsen'; $schild = 'HA';$bdl ='nib';break;
+	case 'bl10': $bundesland_name = 'Nordrhein-Westfalen'; $schild = 'EM';$bdl ='nrw';break;
+	case 'bl11': $bundesland_name = 'Rheinland-Pfalz'; $schild = 'OF';$bdl ='rps';break;
+	case 'bl12': $bundesland_name = 'Saarland'; $schild = 'OF';$bdl ='rps';break;
+	case 'bl13': $bundesland_name = 'Sachsen'; $schild = 'LZ';$bdl ='sac';break;
+	case 'bl14': $bundesland_name = 'Sachsen-Anhalt'; $schild = 'LZ';$bdl ='saa';break;
+	case 'bl15': $bundesland_name = 'Schleswig-Holstein'; $schild = 'HA';$bdl ='shh';break;
+	case 'bl16': $bundesland_name = 'Thüringen'; $schild = 'LZ';$bdl ='thu';break;
+	case 'gesamt': $bundesland_name = 'Deutschland'; $show_germany=true;$bdl ='de';break;
+	default: $bundesland_name = 'Niedersachsen'; $schild = 'HA';$bdl ='nib';break;
 }
 
 switch ($kreis)
