@@ -124,7 +124,7 @@ case '101001000' : $kreis_name='Stadt Flensburg';$kennung='FLX';break;
 case '101002000' : $kreis_name='Stadt Kiel';$kennung='KIX';break;
 case '101003000' : $kreis_name='Hansestadt Lübeck';$kennung='HLX';break;
 case '101004000' : $kreis_name='Stadt Neumünster';$kennung='NMS';break;
-case '101053000' : $kreis_name='kreis_name Herzogtum Lauenburg';$kennung='RZX';break;
+case '101053000' : $kreis_name='Kreis Herzogtum Lauenburg';$kennung='RZX';break;
 case '101060000' : $kreis_name='Kreis Segeberg';$kennung='SEX';break;
 case '101061000' : $kreis_name='Kreis Steinburg';$kennung='IZX';break;
 case '101062000' : $kreis_name='Kreis Stormarn';$kennung='ODX';break;
