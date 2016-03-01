@@ -13,12 +13,13 @@ defined('_JEXEC') or die;
 if (urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png')) :
 $wlbi_url = $ssl.'www.dwd.de/DWD/warnungen/agrar/wbx/wbx_stationen.png';
 else:
-$wlbi_url = $ssl.'www.dwd.de/DE/leistungen/waldbrandgef/bild_leistungen_wbi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=5';
+$wlbi_url = $ssl.'www.dwd.de/DE/leistungen/waldbrandgef/bild_leistungen_wbi.png?__blob=normal&v=5';
 endif;
+
 if (urlspy($ssl.'www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png')) :
 $glfi_url = $ssl.'www.dwd.de/DWD/warnungen/agrar/glfi/glfi_stationen.png';
 else:
-$glfi_url = $ssl.'www.dwd.de/DE/leistungen/graslandfi/bild_leistungen_glfi.png;jsessionid=46BEA5B565D06CB6D7821D6067770260.live21074?__blob=normal&v=4';
+$glfi_url = $ssl.'www.dwd.de/DE/leistungen/graslandfi/bild_leistungen_glfi.png?__blob=normal&v=4';
 endif;
 
 ?>
@@ -104,7 +105,7 @@ echo '</table>';
         $file = @fopen ($adresse, "r");
       }
       // Prüfen ob die gewünschte Datei existiert
-      if($file) {break;
+      if($file) {
         return true;
         fclose($file);
       }

@@ -130,7 +130,7 @@ echo '</table>';
         $file = @fopen ($adresse, "r");
       }
       // Prüfen ob die gewünschte Datei existiert
-      if($file) {break;
+      if($file) {
         return true;
         fclose($file);
       }
