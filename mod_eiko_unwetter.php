@@ -592,7 +592,7 @@ default: $kreis_name='Kreis Leer';$kennung='LER';break;
     'October'   => 'Oktober',
     'December'  => 'Dezember'
 );
-
+  
 
 if ($letzte_akt) :
 

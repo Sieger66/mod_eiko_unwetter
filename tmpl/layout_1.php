@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
 
 $warn_state = 0;
 $array = array();
-$report= '<table class="eiko_unwetter_table '.$moduleclass_sfx.'">';
+$report= '<table width="'.$width.'" class="eiko_unwetter_table '.$moduleclass_sfx.'">';
 		$report .= '<tr>'; 
 		$report .= '<th class="eiko_unwetter_th">';
 	    $report .= '<b>Wetterwarnung für '.$kreis_name.' :</b>';

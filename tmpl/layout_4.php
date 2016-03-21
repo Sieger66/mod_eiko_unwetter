@@ -28,7 +28,7 @@ endif;
 <?php
 
 
-echo '<table class="eiko_karte_table">';
+echo '<table width="'.$width_karte.'" class="eiko_karte_table">';
 
 
 if($titel_karte == "1")
