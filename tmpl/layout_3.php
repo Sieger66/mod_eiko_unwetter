@@ -63,7 +63,7 @@ $col = '';
 if($unwetterkarte == "1")
 {
 echo '<td class="eiko_karte_td">';
-				echo '<a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a>';
+				echo '<a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a>';
 $col = $col+1;
 echo '</td>';
 }

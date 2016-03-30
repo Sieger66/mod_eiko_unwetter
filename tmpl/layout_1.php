@@ -236,7 +236,7 @@ endif;
 				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnstatus/Schilder'.$schild.'.jpg" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
 				endif;
 			else:
-				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
+				$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width.'" border="0"></a></td></tr><td class="eiko_space"></td></tr>';
 		endif;
 	endif;	
 					$report .= '<tr class ="eiko_level_'.$level.'"><td class="eiko_unwetter_td">'; 

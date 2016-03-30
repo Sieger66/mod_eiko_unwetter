@@ -49,7 +49,7 @@ if($unwetterkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-				echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/Warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a></td></tr>';
+				echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a></td></tr>';
 echo '</td>';
 echo '</tr>';
 echo '<tr class="eiko_karte_tr">';
