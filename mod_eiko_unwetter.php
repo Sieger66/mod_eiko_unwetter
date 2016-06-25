@@ -566,7 +566,12 @@ default: $kreis_name='Kreis Leer';$kennung='LER';break;
 	//violett: Warnungen vor extremen Unwetter
 	$DEFCON[5]['color']     				= 'background-color: #880e4f  !important;color:#ffffff !important;border-color:#ffffff !important;'; 
 	$DEFCON[5]['status']    				= 'Warnungen vor extremen Unwetter';
-
+	//lila: Warnungen vor Hitze
+	$DEFCON[10]['color']     				= 'background-color: #c9f  !important;color:#ffffff !important;border-color:#ffffff !important;'; 
+	$DEFCON[10]['status']    				= 'Warnungen vor Hitze';
+	//violett: Warnungen vor erhöhter UV-Intensität
+	$DEFCON[20]['color']     				= 'background-color: #fe68fe  !important;color:#ffffff !important;border-color:#ffffff !important;'; 
+	$DEFCON[20]['status']    				= 'Warnungen vor erhöhter UV-Intensität';
 	
 	$trans = array(
     'Monday'    => 'Montag',

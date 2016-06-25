@@ -11,12 +11,12 @@
 <extension type="module" version="2.5" client="site" method="upgrade">
 	<name>mod_eiko_unwetter</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2016-03-30</creationDate>
+	<creationDate>2016-06-25</creationDate>
 	<copyright>Copyright (c) 2016 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>http://einsatzkomponente.de</authorUrl>
-	<version>1.18</version>
+	<version>1.19</version>
 	<description>
 	<![CDATA[
 	<p><h1>mod_eiko_unwetter (DWD-Wetterwarnungen/Waldbrandgefahr/Graslandfeuerindex)</h1>Das Modul dient der Anzeige von Wetterwarnungen des DWD auf einer Modulposition, und wurde vorrangig für den Einsatz auf Webseiten von Feuerwehren und anderen Hilfsorganisationen erstellt.<div class="alert alert-warning" role="alert">Das Copyright des DWD darf auf keinen Fall entfernt werden.<br/>Quelle der Warnungen: http://www.dwd.de</div><div class="alert alert-info" role="alert">Weitere Informationen zu diesem Modul gibt es auf <a href ="http://www.einsatzkomponente.de" target="_blank"> http://www.einsatzkomponente.de</a></div>
