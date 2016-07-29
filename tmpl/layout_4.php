@@ -49,7 +49,7 @@ if($unwetterkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-				echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen/warnkarten/warnWetter_'.$bdl.'_node.html?bundesland='.$bdl.'"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a></td></tr>';
+				echo '<tr><td class="eiko_unwetter_td"><a target="_BLANK" href="'.$ssl.'www.dwd.de/DE/wetter/warnungen_gemeinden/warnWetter_node.html"><img src="'.$ssl.'www.dwd.de/DWD/warnungen/warnapp/json/warning_map_'.$bdl.$unwetterkarte_kriterium.'.png" title="Warnkarte: '.$bundesland_name.'" width="'.$width_karte.'" border="0"></a></td></tr>';
 echo '</td>';
 echo '</tr>';
 echo '<tr class="eiko_karte_tr">';
@@ -78,7 +78,14 @@ if($waldbrandkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="'.$wlbi_url.'" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
+
+if ($show_germany):
+	echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef/waldbrandgef.html" target="_blank"><img src="'.$wlbi_url.'" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
+endif;
+if (!$show_germany):
+	echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/waldbrandgef_bl/waldbrandgefbl.html?nn=16102&cl2Categories_Bundesland=wbh_'.$bundesland.'" target="_blank"><img src="'.$wlbi_url.'" title="Waldbrandgefahrenindex" width="'.$width_karte.'" border="0"></a>';
+endif;
+
 echo '</td>';
 echo '</tr>';
 echo '<tr class="eiko_karte_tr">';
@@ -107,7 +114,14 @@ if($graslandkarte == "1")
 {
 echo '<tr class="eiko_karte_tr">';
 echo '<td class="eiko_karte_td">';
-echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="'.$glfi_url.'" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
+
+if ($show_germany):
+	echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi_bl/graslandfibl.html?nn=16102&cl2Categories_Bundesland=glh_'.$bundesland.'" target="_blank"><img src="'.$glfi_url.'" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
+endif;
+if (!$show_germany):
+	echo '<a href="'.$ssl.'www.dwd.de/DE/leistungen/graslandfi/graslandfi.html" target="_blank"><img src="'.$glfi_url.'" title="Graslandfeuer-Index" width="'.$width_karte.'" border="0"></a>';
+endif;
+
 echo '</td>';
 echo '</tr>';
 echo '<tr class="eiko_karte_tr">';
