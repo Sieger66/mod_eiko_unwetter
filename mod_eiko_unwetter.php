@@ -53,6 +53,7 @@ $css = $params->get( 'eiko_unwetter_css','.eiko_unwetter_h2 { color:#ffffff; }
 ' );
 $layout = $params->get( 'layout','layout_1' );
 $width = $params->get( 'width','100%' );
+$gemeinde_width = $params->get( 'gemeinde_width','100%' );
 $bundesland = $params->get('bl','bl09');
 $warnkarte = $params->get('warnkarte','1');
 

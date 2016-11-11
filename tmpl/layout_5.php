@@ -41,10 +41,10 @@ $letzte_akt = strip_tags($letzte_akt);
 //print_r ($lines);break;
 
 
-		$pos = strpos($lines, '<h2>'.$gemeinde_name.'</h2>'); 
+		$pos = strpos($lines, '<h2 id="'.$gemeinde_name.'">'.$gemeinde_name.'</h2>'); 
 							   if($pos) :
 							   
-									echo '<table width="'.$width.'" class="eiko_unwetter_table '.$moduleclass_sfx.'">';
+									echo '<table width="'.$gemeinde_width.'" class="eiko_unwetter_table '.$moduleclass_sfx.'">';
 									echo '<tr>'; 
 									echo '<th class="eiko_unwetter_th">';
 									echo '<b>Wetterwarnung für '.$gemeinde_name.' :</b>';
@@ -54,13 +54,14 @@ $letzte_akt = strip_tags($letzte_akt);
 									echo '</tr>';
 
 									//$lines = strip_tags($lines);echo $lines;break;
-									$lines = strstr($lines, '<h2>'.$gemeinde_name.'</h2>', false) ; 
+									$lines = strstr($lines, '<h2 id="'.$gemeinde_name.'">'.$gemeinde_name.'</h2>', false) ; 
 									$lines = strstr($lines, '</table>', true) ; 
 									$lines = $lines.'<tr><td colspan="4"><small><a href="http://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a></small> <small>('.$letzte_akt.')</small></td></tr></table>';
 									$lines = str_replace('<colgroup><col class="firstColumn"</col><col class="colorColumn"></col><col class="colorColumn"></col><col class="colorColumn"></col>', '', $lines);
-									$lines = str_replace($gemeinde_name, 'Wetterwarnungen f&uuml;r '.$gemeinde_name.'', $lines);
-									$lines = str_replace('<h2>', '<h2 class="eiko_unwetter_h2">', $lines);
-									$lines = str_replace('<table>', '<table class="eiko_unwetter_table">', $lines);
+									$lines = str_replace($gemeinde_name, '', $lines);
+									$lines = str_replace('<h2 id="'.$gemeinde_name.'">', '', $lines);
+									$lines = str_replace('</h2>', '', $lines);
+									$lines = str_replace('<table>', '<table  width="'.$gemeinde_width.'" class="eiko_unwetter_table">', $lines);
 									$lines = str_replace('<th>', '<th class="eiko_unwetter_th">', $lines);
 									$lines = str_replace('<td>', '<td class="eiko_unwetter_td">', $lines); 
 									echo $lines;
