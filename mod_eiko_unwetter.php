@@ -87,6 +87,7 @@ $letzte_akt = strip_tags($letzte_akt);
 $lines = substr($lines, 24, -2); 
 
 $jsondata = $lines;
+$jsondata = preg_replace('/([^\\\])":([0-9]{10,})(,|})/', '$1":"$2"$3', $jsondata); // PHP 5.3 fix !!!!
 $json = json_decode($jsondata, true);
 
 $time = date('d/m/Y', substr($json['time'], 0, -3)).' - '.date('H:i', substr($json['time'], 0, -3)).' Uhr'; 
@@ -11897,13 +11898,13 @@ default: $gemeinde_name='Gemeinde Moormerland'; $gemeinde_bl='NS'; $gemeinde_bl_
     'Friday'    => 'Freitag',
     'Saturday'  => 'Samstag',
     'Sunday'    => 'Sonntag',
-    'Mon'       => 'Mo',
-    'Tue'       => 'Di',
-    'Wed'       => 'Mi',
-    'Thu'       => 'Do',
-    'Fri'       => 'Fr',
-    'Sat'       => 'Sa',
-    'Sun'       => 'So',
+    'Mon'       => 'Montag',
+    'Tue'       => 'Dienstag',
+    'Wed'       => 'Mittwoch',
+    'Thu'       => 'Donnerstag',
+    'Fri'       => 'Freitag',
+    'Sat'       => 'Samstag',
+    'Sun'       => 'Sonntag',
     'January'   => 'Januar',
     'February'  => 'Februar',
     'March'     => 'März',
@@ -11911,7 +11912,19 @@ default: $gemeinde_name='Gemeinde Moormerland'; $gemeinde_bl='NS'; $gemeinde_bl_
     'June'      => 'Juni',
     'July'      => 'Juli',
     'October'   => 'Oktober',
-    'December'  => 'Dezember'
+    'December'  => 'Dezember',
+	'Jan'  => '01',
+	'Feb'  => '02',
+	'Mar'  => '03',
+	'Apr'  => '04',
+	'May'  => '.05',
+	'June'  => '.06',
+	'July'  => '.07',
+	'Aug'  => '08',
+	'Sept'  => '09',
+	'Oct'  => '10',
+	'Nov'  => '11',
+	'Dec'  => '12'
 );
   
 
