@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	@copyright	Copyright (c) 2015 einsatzkomponente.de (http://einsatzkomponente.de). All rights reserved.
+ * @copyright	@copyright	Copyright (c) 2015 einsatzkomponente.de (https://einsatzkomponente.de). All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -24,9 +24,9 @@ $bdl = '';
 
 if(isset($_SERVER['HTTPS'])) : $ssl='https://'; else:	$ssl='http://'; endif;
 
-//$link = 'http://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.html';
-//$link = 'http://www.dwd.de/DWD/warnungen/warnapp/json/warnings.html';
-$link = 'http://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.json';
+//$link = 'https://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.html';
+//$link = 'https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.html';
+$link = 'https://www.wettergefahren.de/DWD/warnungen/warnapp/warnings.json';
 
 $show_level_type = $params->get('show_level_type','0');
 $show_instruction = $params->get('show_instruction','0');
@@ -90,7 +90,7 @@ $jsondata = $lines;
 $jsondata = preg_replace('/([^\\\])":([0-9]{10,})(,|})/', '$1":"$2"$3', $jsondata); // PHP 5.3 fix !!!!
 $json = json_decode($jsondata, true);
 
-$time = date('d/m/Y', substr($json['time'], 0, -3)).' - '.date('H:i', substr($json['time'], 0, -3)).' Uhr'; 
+$time = date('d.m.Y', substr($json['time'], 0, -3)).' - '.date('H:i', substr($json['time'], 0, -3)).' Uhr'; 
 $copyright = $json['copyright'];
 $arr = $json['warnings'];
 $vorabinformation_arr = $json['vorabInformation'];

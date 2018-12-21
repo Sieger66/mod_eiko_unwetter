@@ -4,7 +4,7 @@
  * @package     mod_eiko_unwetter
  * @copyright   Copyright (C) 2015 by Ralf Meyer. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - http://einsatzkomponente.de
+ * @author      Ralf Meyer <ralf.meyer@einsatzkomponente.de> - https://einsatzkomponente.de
  */
 
 // no direct access
@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
 
 
 
-$link = 'http://www.dwd.de/DWD/warnungen/warnapp_gemeinden/json/warnings_gemeinde_'.$gemeinde_bl_dwd.'.html';
+$link = 'https://www.dwd.de/DWD/warnungen/warnapp_gemeinden/json/warnings_gemeinde_'.$gemeinde_bl_dwd.'.html';
 
 if ($curl == '2') : $lines = file_get_contents($link); endif;
 if ($curl == '1') : 
@@ -56,7 +56,7 @@ $letzte_akt = strip_tags($letzte_akt);
 									//$lines = strip_tags($lines);echo $lines;break;
 									$lines = strstr($lines, '<h2 id="'.$gemeinde_name.'">'.$gemeinde_name.'</h2>', false) ; 
 									$lines = strstr($lines, '</table>', true) ; 
-									$lines = $lines.'<tr><td colspan="4"><small><a href="http://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a></small> <small>('.$letzte_akt.')</small></td></tr></table>';
+									$lines = $lines.'<tr><td colspan="4"><small><a href="https://www.dwd.de" target="_blank">Quelle: Deutsche Wetterdienst</a></small> <small>('.$letzte_akt.')</small></td></tr></table>';
 									$lines = str_replace('<colgroup><col class="firstColumn"</col><col class="colorColumn"></col><col class="colorColumn"></col><col class="colorColumn"></col>', '', $lines);
 									$lines = str_replace($gemeinde_name, '', $lines);
 									$lines = str_replace('<h2 id="'.$gemeinde_name.'">', '', $lines);
