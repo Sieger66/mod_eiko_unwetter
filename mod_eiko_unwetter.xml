@@ -272,7 +272,7 @@ Der Graslandfeuerindex (GLFI) beschreibt die Feuergefährdung von offenem, nicht
 <!-- UPDATESERVER DEFINITION -->
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" priority="1" name="mod_eiko_unwetter">https://www.feuerwehr-veenhusen.de/update/mod_eiko_unwetter-update.xml</server>
+		<server type="extension" priority="1" name="mod_eiko_unwetter">https://einsatzkomponente.joomla100.com/update/mod_eiko_unwetter-update.xml</server>
 	</updateservers>
 
 	</extension>
