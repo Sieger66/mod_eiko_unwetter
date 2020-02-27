@@ -58,7 +58,7 @@ echo '</tr>';
 
 echo '<tr class="eiko_karte_tr">';
 
-$col = '';
+$col = 0;
 
 if($unwetterkarte == "1")
 {
