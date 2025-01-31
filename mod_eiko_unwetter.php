@@ -90,7 +90,7 @@ $jsondata = $lines;
 $jsondata = preg_replace('/([^\\\])":([0-9]{10,})(,|})/', '$1":"$2"$3', $jsondata); // PHP 5.3 fix !!!!
 $json = json_decode($jsondata, true);
 
-$time = date('d.m.Y', substr($json['time'], 0, -3)).' - '.date('H:i', substr($json['time'], 0, -3)).' Uhr'; 
+$time = date('d.m.Y', (int)substr($json['time'], 0, -3)).' - '.date('H:i', (int)substr($json['time'], 0, -3)).' Uhr';
 $copyright = $json['copyright'];
 $arr = $json['warnings'];
 $vorabinformation_arr = $json['vorabInformation'];
